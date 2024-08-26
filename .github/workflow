@@ -1,0 +1,25 @@
+```python
+# Import the necessary library
+import re
+
+# Create a list of documents to be searched
+documents = [
+    "This is the first document. It talks about technology.",
+    "The second document discusses artificial intelligence and machine learning.",
+    "Document three focuses on data science and analytics."
+]
+
+# Function to perform the search
+def search_documents(query, documents):
+    results = []
+    for i, doc in enumerate(documents):
+        if re.search(query, doc, re.IGNORECASE):
+            results.append(i)
+    return results
+
+# Example usage
+query = input("Enter your search query: ")
+print("Search Results:", search_documents(query, documents))
+```
+
+This is a basic example in Python that searches through a list of documents using regular expressions. You can modify and expand upon this code to create a more advanced and comprehensive search engine.
