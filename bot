@@ -1,0 +1,12 @@
+import transformers
+
+# Load a pre-trained language model
+model = transformers.AutoModelForCausalLM.from_pretrained("gpt2")
+tokenizer = transformers.AutoTokenizer.from_pretrained("gpt2")
+
+# Generate text using the model
+prompt = "The following is a conversation between a user and an AI assistant. The AI assistant is helpful, creative, clever, and very friendly."
+input_ids = tokenizer.encode(prompt, return_tensors="pt")
+output = model.generate(input_ids, max_length=100, num_return_sequences=1)
+decoded_output = tokenizer.decode(output[0], skip_special_tokens=True)
+print(decoded_output
